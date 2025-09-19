@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日视频 - 悠悠18岁生日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="video-page">
+    <!-- 返回导航 -->
+    <nav class="page-nav">
+        <button class="nav-btn back-btn" onclick="goHome()">
+            <i class="fas fa-arrow-left"></i>
+            <span>返回首页</span>
+        </button>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="goToLetter()">
+                <i class="fas fa-envelope-heart"></i>
+                <span>生日信</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 视频容器 -->
+    <div class="video-container">
+        <div class="video-header">
+            <h1 class="video-title">
+                <i class="fas fa-film"></i>
+                悠悠的18岁生日回忆
+                <i class="fas fa-birthday-cake"></i>
+            </h1>
+            <p class="video-subtitle">18年的成长时光，满满都是爱 💖</p>
+        </div>
+
+        <div class="video-wrapper">
+            <!-- 视频播放区域 -->
+            <div class="video-player-container">
+                <!-- 占位符，等待添加实际视频 -->
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <div class="placeholder-content">
+                        <i class="fas fa-video"></i>
+                        <h3>等待添加生日视频</h3>
+                        <p>请提供视频文件链接，我将替换此占位符</p>
+                        <div class="video-format-info">
+                            <small>支持格式：MP4、WebM、OGV</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 实际视频元素（默认隐藏） -->
+                <video class="video-player" id="videoPlayer" controls playsinline webkit-playsinline style="display: none;">
+                    <source src="" type="video/mp4">
+                    <source src="" type="video/webm">
+                    <source src="" type="video/ogg">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+
+            <!-- 视频控制面板 -->
+            <div class="video-controls" id="videoControls" style="display: none;">
+                <button class="control-btn" id="playPauseBtn" onclick="togglePlay()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <button class="control-btn" onclick="toggleMute()">
+                    <i class="fas fa-volume-up" id="volumeIcon"></i>
+                </button>
+                <div class="volume-container">
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
+                </div>
+                <button class="control-btn" onclick="toggleFullscreen()">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 视频描述 -->
+        <div class="video-description">
+            <div class="description-card">
+                <h3>
+                    <i class="fas fa-heart"></i>
+                    关于这个视频
+                </h3>
+                <p>这是一个特别为悠悠18岁生日制作的回忆短片，记录了她从小到大的美好时光。</p>
+                <p>每一个镜头都饱含着爸爸妈妈对她深深的爱意，每一段回忆都见证着她的成长足迹。</p>
+                <div class="video-stats">
+                    <div class="stat">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>制作日期：2024年9月</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>时长：待上传后显示</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>制作者：爸爸妈妈</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 视频上传指引 -->
+        <div class="upload-guide" id="uploadGuide">
+            <div class="guide-card">
+                <h3>
+                    <i class="fas fa-info-circle"></i>
+                    如何添加视频
+                </h3>
+                <ol>
+                    <li>请将您的生日视频上传到在线存储服务（如阿里云OSS、腾讯云COS等）</li>
+                    <li>获取视频的公共访问链接</li>
+                    <li>将链接提供给开发者，我们将更新网站</li>
+                    <li>建议视频格式为MP4，大小不超过100MB，以确保播放流畅</li>
+                </ol>
+                <div class="note">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>提示：视频添加后，您可以在这里观看悠悠的成长回忆！</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 留言板 -->
+        <div class="message-board">
+            <h3>
+                <i class="fas fa-comments"></i>
+                对悠悠的祝福
+            </h3>
+            <div class="message-list">
+                <div class="message-item">
+                    <div class="message-avatar">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="message-content">
+                        <h4>爸爸妈妈</h4>
+                        <p>悠悠，18岁生日快乐！愿你永远快乐，永远善良，永远是我们心中最珍贵的宝贝！</p>
+                        <span class="message-time">2024年9月19日</span>
+                    </div>
+                </div>
+                
+                <div class="message-item">
+                    <div class="message-avatar">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="message-content">
+                        <h4>家人们</h4>
+                        <p>希望我们的小公主在人生的新起点上，能够勇敢地追求自己的梦想，绽放最美丽的光芒！</p>
+                        <span class="message-time">特别的日子</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 飘落效果 -->
+    <div class="floating-stars" id="stars"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,146 +1,228 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light" style=""><head>
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>给女儿的生日信</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-    <style>
-      body {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 32px 80px;
-        position: relative;
-        box-sizing: border-box;
-        font-family: 'ZCOOL KuaiLe', 'Noto Serif SC', serif;
-        line-height: 1.9;
-        color: #666;
-        background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 50%, #f0ebe5 100%);
-        min-height: 100vh;
-      }
+    <title>悠悠18岁生日快乐 🎂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 背景粒子效果 -->
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 标题区域 -->
+        <header class="main-header">
+            <h1 class="birthday-title">
+                <i class="fas fa-crown"></i>
+                悠悠的18岁生日
+                <i class="fas fa-crown"></i>
+            </h1>
+            <p class="subtitle">愿我们的小公主永远快乐 ✨</p>
+        </header>
 
-      h1 {
-        text-align: center;
-        color: #a0673a;
-        font-size: 32px;
-        margin-bottom: 32px;
-        font-family: 'Noto Serif SC', serif;
-        font-weight: 600;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        padding-bottom: 16px;
-        border-bottom: 2px solid rgba(160, 103, 58, 0.2);
-        letter-spacing: 1px;
-      }
+        <!-- 照片轮播区域 -->
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/edf0d3568377acfa385243fb210c11cd" alt="悠悠的快乐时光" class="carousel-image">
+                        <div class="photo-caption">
+                            <h3>快乐的童年 🫧</h3>
+                            <p>那个爱玩泡泡相机的可爱小女孩</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/213b90b845c2b73fcbaaac046a4944aa" alt="悠悠的青春活力" class="carousel-image">
+                        <div class="photo-caption">
+                            <h3>青春活力 🎈</h3>
+                            <p>满满的青春气息和无忧无虑的笑容</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/56c966c0f6ce61fd55137093e7d9f3e6" alt="悠悠的优雅气质" class="carousel-image">
+                        <div class="photo-caption">
+                            <h3>优雅成长 🌸</h3>
+                            <p>亭亭玉立的大姑娘，温柔又美丽</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/ed9fc745a80abbfb5e8fe0d200836b3f" alt="悠悠的灿烂笑容" class="carousel-image">
+                        <div class="photo-caption">
+                            <h3>灿烂笑容 ☀️</h3>
+                            <p>永远如阳光般温暖人心的笑容</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 轮播控制 -->
+                <button class="carousel-btn prev-btn" onclick="prevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" onclick="nextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- 添加更多照片幻灯片 -->
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/afe522d8910be762ce3b3ab9e9d3c205" alt="悠悠的自信风采" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>自信风采 💼</h3>
+                        <p>成熟自信的职业装扮，展现18岁的成年人风范</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/98b1fea6a7e74cc7f30e774bff1935e1" alt="悠悠的俏皮时刻" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>俏皮可爱 🎀</h3>
+                        <p>调皮的手势，永远保持那份纯真的童心</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/01f29e60b52022b7c077da0c6317f365" alt="悠悠的自然美丽" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>自然美丽 🌸</h3>
+                        <p>清新自然的美丽，如春花般绽放的笑容</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/eca2208bef4a89c32afc6527b9f05a6a" alt="悠悠的优雅气质" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>优雅淑女 🌿</h3>
+                        <p>戴着花环的小仙女，温柔优雅如绿叶般清新</p>
+                    </div>
+                </div>
+                
+                <!-- 新增时尚照片系列 -->
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/65579b9f7b789302e7248c35622abc17" alt="悠悠的时尚风格" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>时尚达人 👗</h3>
+                        <p>牛仔风格展现青春时尚，自信满满的大女孩</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/eb4ed3858279a23b387bc3780de49d62" alt="悠悠的个性魅力" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>个性魅力 ✨</h3>
+                        <p>独特的造型，展现18岁少女的时尚品味</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/4dc8a5e3847fa3909e01d5c7cec97cfc" alt="悠悠的酷帅风采" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>酷帅风采 😎</h3>
+                        <p>帅气的牛仔造型，展现现代女孩的独特魅力</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/70b483520cbda7734b5c9ccae4340dad" alt="悠悠的青春活力" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>青春无敌 🌟</h3>
+                        <p>坐在长椅上的悠闲时光，青春洋溢的美好瞬间</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/866ac84d0c802e7715365c04cb334b05" alt="悠悠的精致美丽" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>精致美丽 💄</h3>
+                        <p>精致的妆容，温柔的表情，如天使般美丽</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/5eb7de99bd1eb511ad063a316a7141cc" alt="悠悠的时尚态度" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>时尚态度 🔥</h3>
+                        <p>自信的姿态，展现成熟女孩的时尚品味</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/c3e4ac7d69bdabbc6b6e3de110c916c8" alt="悠悠的古典优雅" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>古典优雅 🏛️</h3>
+                        <p>在雕塑旁的优雅身影，如艺术品般美丽动人</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/b6ad18f13b7bc717b416cd6512c570c6" alt="悠悠的温柔气质" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>温柔如水 💫</h3>
+                        <p>优雅的坐姿，温柔的笑容，如古典美人般动人</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/c5bd99afee4e91042abeeb31b9bdaf42" alt="悠悠的自然姿态" class="carousel-image">
+                    <div class="photo-caption">
+                        <h3>自然本真 🍃</h3>
+                        <p>最自然的姿态，最真实的美丽，纯净如初</p>
+                    </div>
+                </div>
 
-      .greeting {
-        text-align: left;
-        margin-bottom: 26px;
-        font-size: 20px;
-        color: #a0673a;
-        font-family: 'ZCOOL KuaiLe', cursive;
-        font-weight: 500;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-      }
+                <!-- 轮播指示器 -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="currentSlideFunc(1)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(2)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(3)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(4)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(5)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(6)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(7)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(8)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(9)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(10)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(11)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(12)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(13)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(14)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(15)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(16)"></span>
+                    <span class="indicator" onclick="currentSlideFunc(17)"></span>
+                </div>
+            </div>
+        </section>
 
-      .letter-content {
-        text-align: justify;
-        text-indent: 2em;
-        margin-bottom: 24px;
-        font-size: 19px;
-        line-height: 1.9;
-        color: #777;
-        font-family: 'ZCOOL KuaiLe', cursive;
-        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
-      }
+        <!-- 导航区域 -->
+        <section class="navigation-section">
+            <div class="nav-cards">
+                <div class="nav-card letter-card" onclick="goToLetter()">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope-heart"></i>
+                    </div>
+                    <h3>爸爸妈妈的话</h3>
+                    <p>一封满含爱意的生日信</p>
+                    <div class="card-glow"></div>
+                </div>
+                
+                <div class="nav-card video-card" onclick="goToVideo()">
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>生日视频</h3>
+                    <p>特别为你制作的回忆短片</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </section>
 
-
-
-      .signature {
-        text-align: right;
-        margin-top: 40px;
-        font-size: 19px;
-        color: #a0673a;
-        font-family: 'ZCOOL KuaiLe', cursive;
-        font-weight: 500;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        transform: rotate(-1deg);
-      }
-
-      .heart {
-        color: #e74c3c;
-        font-size: 19px;
-      }
-
-
-
-      @media (max-width: 768px) {
-        body {
-          padding: 20px 30px;
-        }
-
-        h1 {
-          font-size: 26px;
-        }
-
-        .letter-content {
-          font-size: 18px;
-        }
-      }
-    </style>
-  </head>
-  <body style="">
-    <h1>给我亲爱女儿的生日信</h1>
-
-    <div class="greeting">最亲爱的女儿：</div>
-
-    <div class="letter-content">
-      今天是你18岁的生日 🎂，这个特殊的日子标志着你正式加入成年人的队伍了。爸爸妈妈想对你说：生日快乐！🎉 愿你在人生的新起点上，绽放出最美丽的光芒 ✨。
+        <!-- 生日祝福 -->
+        <section class="blessing-section">
+            <div class="blessing-text">
+                <p class="blessing-quote">
+                    "十八年来，你是我们生命中最美好的礼物 🎁"
+                </p>
+                <p class="blessing-signature">
+                    —— 永远爱你的爸爸妈妈 ❤️
+                </p>
+            </div>
+        </section>
     </div>
 
-    <div class="letter-content">
-      还记得2007年9月19日晚上在医院产房外等待你到来的场景 👶，时间总是跑得很快，转眼十八年了，我们看着你从一个小小、胖胖的小娃娃成长为今天这个美丽、聪慧、善良的大姑娘 👧➡️👱‍♀️，你成长中的每一个阶段，好像都在昨天刚刚发生一样！
-    </div>
+    <!-- 飘落的花瓣效果 -->
+    <div class="petals-container" id="petals"></div>
 
-    <div class="letter-content">
-      从出生以后，你一直都是同龄人中身材高挑的那一个 📏，看着你慢慢的超过妈妈，又超过爸爸，悄悄成为1.9米的超模身材，但在我们眼中，你依然是那个天真烂漫、有点"大条"特别可爱的小丫头 😊。回想这些年，我们生命中的快乐大多都与你有关 💕，一个普通的家庭，一个普通的房间，你的到来让简单的日子变的不同，让我们这个家更有盼头 🏠，让未来有了那么多的期望。小小的你又有那么多的超能力 ✨，是你让姥爷那个顽固的老头脾气变的柔软，让做事大条的姥姥变得细致入微，让不喜早回家的爸爸，因为你的一句话，能早早回家，让笨手笨脚的妈妈为你下厨房变成你的专属大厨 👩‍🍳。而你不仅是我们心中最珍贵的宝贝，亦是我们这个大家庭不能缺少的调和剂。
-    </div>
-
-    <div class="letter-content">
-      2026年，你即将面临人生中的重要挑战——高考 📚。这可能会让你感到压力和紧张，但你要相信你自己，就像中考查成绩那天的惊喜和欢笑一样 😄，这次也一定是你展现自己才华和努力成果的绝佳机会。那让我们在距离高考不到10个月的时间里，一起努力，考取理想的大学！💪
-    </div>
-
-    <div class="letter-content">
-      亲爱的悠悠，我们希望你能继续保持那份对学习的热情和专注 📖。你要记住每一份努力都不会白费，每一次坚持都会让你变得更强 💪。我们相信你一定能够取得优异的成绩，不仅仅是因为你的能力，更是因为你对梦想的执着追求 🌟。
-    </div>
-
-    <div class="letter-content">
-      18岁，你已成年 🎓，有些人生道理希望跟你分享。关于金钱 💰，我们希望你明白：钱是生活的工具，不是生活的目标。要学会理财，量入为出，但不要被金钱所束缚。真正的富有来自于内心的充实和精神的富足 💎。记住，要付出劳动挣来钱，无论多少，都要心怀感恩 🙏。
-    </div>
-
-    <div class="letter-content">
-      关于爱情 💕，我们希望你能明白：真正的爱情应该是相互尊重、相互成长的。选择伴侣时，人品比外表更重要，三观契合比激情更持久 💖。不要为了恋爱而恋爱，也不要害怕单身。要先学会爱自己，才能更好地爱别人 🥰。记住，任何真正爱你的人都不会要求你放弃自己的梦想和原则。
-    </div>
-
-    <div class="letter-content">
-      关于社会 🌍，面对这个复杂的社会，我们希望你能保持善良，但不要失去辨别力。要做一个有温度的人 🤗，帮助需要帮助的人，但也要学会保护自己 🛡️。社会上会有各种声音和诱惑，要坚持自己的原则和底线。无论走到哪里，都要做一个正直、诚实、有责任心的人 ⭐。
-    </div>
-
-    <div class="letter-content">
-      人生的路还很长 🛤️，高考只是其中的一个里程碑。在努力追求目标的同时，也要照顾好自己的身心健康 🌱。无论前方有多少挑战等待着你，请记住，你并不孤单。爸爸妈妈永远是你最坚实的后盾 🏔️，我们会在你需要的时候给你支持，在你疲惫的时候给你拥抱 🤗，在你迷茫的时候为你指引方向 🧭。
-    </div>
-
-    <div class="letter-content">
-      最后，我们想对你说：做自己，相信自己，爱自己 💗。无论你是高高的大个子，还是心里住着小孩子的你，都是我们最爱的女儿。愿你在未来的每一天里都能快乐地生活 😊，用你那份纯真和"大条"继续温暖这个世界 🌞，勇敢地追求自己的梦想 🦋，善良地对待身边的每一个人 🌸。
-    </div>
-
-    <div class="letter-content">
-      悠悠，生日快乐，我们最爱的女儿！愿你以后的人生充满无限可能，愿你未来的每一天都离你的梦想越来越近！<span class="heart">❤️</span>
-    </div>
-
-    <div class="signature">
-      永远爱你的<br>
-      爸爸妈妈
-    </div>
-  
-
-</body></html>
+    <script src="js/main.js"></script>
+</body>
+</html>
